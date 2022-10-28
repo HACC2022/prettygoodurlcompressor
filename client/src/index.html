@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Links -- links.hi.gov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./normalise.css" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <span class="logo part-one">links.</span
+          ><span class="logo part-two">hi.gov</span>
+        </div>
+        <div class="button logout">Log out</div>
+      </header>
+
+      <div class="h1-container">
+        <h1>My Links</h1>
+      </div>
+
+      <div class="radio-case">
+        <div class="radio-option">
+          <input
+            type="radio"
+            id="newest"
+            name="sort-by"
+            value="newest"
+            checked
+          />
+          <label for="newest">Newest</label>
+        </div>
+
+        <div class="radio-option trending">
+          <input type="radio" id="trending" name="sort-by" value="trending" />
+          <label for="trending">Trending</label>
+        </div>
+
+        <div class="button new-link">New link</div>
+      </div>
+
+      <div class="layout-box">
+        <div class="list" role="list">
+          <div class="list-item" role="listitem">
+            <div class="list-item-group">
+              <div class="date-item">Date</div>
+              <div class="click-item">Clicks (all time)</div>
+            </div>
+            <div class="list-item-group">
+              <div class="title-item">Title</div>
+              <div class="short-url-item">Short URL</div>
+            </div>
+          </div>
+
+          <div class="list-item" role="listitem">
+            <div class="list-item-group">
+              <div class="date-item">OCT 24</div>
+              <div class="click-item">86 clicks</div>
+            </div>
+            <div class="list-item-group">
+              <div class="title-item">Wikipedia</div>
+              <div class="short-url-item">/dkjE3hh</div>
+            </div>
+          </div>
+
+          <div class="list-item" role="listitem">
+            <div class="list-item-group">
+              <div class="date-item">OCT 22</div>
+              <div class="click-item">13 clicks</div>
+            </div>
+            <div class="list-item-group">
+              <div class="title-item">Google</div>
+              <div class="short-url-item">/KdsE23w</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="link-details">
+          <img src="./img/close-icon.svg" alt="close-icon" class="close-icon" />
+
+          <div class="link-title" role="heading">Wikipedia</div>
+
+          <div class="link-details-container">
+            <div class="link-date">October 24, 2022 6:43 UTC</div>
+            <div class="edit">
+              <img
+                class="edit-icon"
+                src="./img/edit-icon.svg"
+                alt="edit icon"
+              />
+              <p class="edit-text">Edit</p>
+            </div>
+
+            <div class="delete">
+              <img
+                src="./img/delete-icon.svg"
+                alt="delete icon"
+                class="delete-icon"
+              />
+              <p class="delete-text">Delete</p>
+            </div>
+          </div>
+
+          <div class="long-url label-text">
+            <div class="long-url-label link-details-label" role="heading">
+              Long URL
+            </div>
+            <div class="long-url-text link-details-text" role="text">
+              https://www.wikipedia.org/
+            </div>
+          </div>
+
+          <div class="shortened-url label-text">
+            <div class="shortened-url-label link-details-label" role="heading">
+              Shortened URL
+            </div>
+            <div class="shortened-url-text link-details-text" role="text">
+              hi.gov/dkjE3hh
+            </div>
+          </div>
+
+          <div class="label-text">
+            <div class="utm-source-label link-details-label" role="heading">
+              utm_source
+            </div>
+            <div class="utm-source-text link-details-text" role="text">
+              twitter
+            </div>
+          </div>
+
+          <div class="label-text">
+            <div class="utm-medium-label link-details-label" role="heading">
+              utm_medium
+            </div>
+            <div class="utm-medium-text link-details-text" role="text">
+              social
+            </div>
+          </div>
+
+          <div class="label-text">
+            <div class="utm-campagin-label link-details-label" role="heading">
+              utm_campagin
+            </div>
+            <div class="utm-campagin-text link-details-text" role="text">
+              spring_sale
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="new-link-menu">
+        <div class="new-link-heading" role="heading">Create new link</div>
+
+        <label for="new-link-long-url">Long URL</label>
+        <input type="text" id="new-link-long-url" name="new-link-long-url" />
+
+        <label for="new-link-short-url"
+          >Short URL path
+          <span class="recommended-field">- Recommended</span></label
+        >
+        <input type="text" name="new-link-short-url" id="new-link-short-url" />
+
+        <label for="new-link-title"
+          >Title <span class="recommended-field">- Recommended</span></label
+        >
+        <input type="text" name="new-link-title" id="new-link-title" />
+
+        <div class="utm-parameters-heading" role="heading">
+          UTM Parameters <span class="optional-field">- Optional</span>
+        </div>
+
+        <label for="new-link-source">utm_source</label>
+        <input type="text" name="new-link-source" id="new-link-source" />
+
+        <label for="new-link-medium">utm_medium</label>
+        <input type="text" name="new-link-medium" id="new-link-medium" />
+
+        <label for="new-link-campaign">utm_campaign</label>
+        <input type="text" name="new-link-campaign" id="new-link-campaign" />
+
+        <div class="button create-link">Create Link</div>
+        <div class="button cancel">Cancel</div>
+      </form>
+    </div>
+
+    <script src="./index.ts" type="module"></script>
+  </body>
+</html>
+
+<!-- <div class="app-bar">
+        <div class="app-bar-slot">
+          <img
+            class="slot-icon selected"
+            src="./img/home-icon.svg"
+            alt="home icon"
+          />
+          <div class="slot-text selected">Home</div>
+        </div>
+        <div class="app-bar-slot">
+          <img
+            class="slot-icon"
+            src="./img/explorer-icon.svg"
+            alt="query stats icon"
+          />
+          <div class="slot-text">Explorer</div>
+        </div>
+        <div class="app-bar-slot">
+          <img
+            class="slot-icon"
+            src="./img/settings-icon.svg"
+            alt="settings icon"
+          />
+          <div class="slot-text">Settings</div>
+        </div>
+      </div> -->

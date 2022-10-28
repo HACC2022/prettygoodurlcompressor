@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Continue -- links.hi.gov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../normalise.css" />
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="./continue.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <span class="logo part-one">links.</span
+        ><span class="logo part-two">hi.gov</span>
+      </header>
+      <main>
+        <h1>Confirm your email</h1>
+
+        <form>
+          <div class="code">
+            <label for="code"
+              >Enter the code we sent to username@hawaii.gov:</label
+            >
+            <input
+              type="tel"
+              id="code"
+              name="code"
+              placeholder="- - - - - -"
+              novalidate
+            />
+          </div>
+
+          <div class="button continue" role="button"><span>Continue</span></div>
+        </form>
+      </main>
+      <div class="horizontal-line"></div>
+    </div>
+
+    <script src="./continue.ts" type="module"></script>
+  </body>
+</html>

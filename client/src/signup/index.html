@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up -- links.hi.gov</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../normalise.css" />
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="./signup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <span class="logo part-one">links.</span
+        ><span class="logo part-two">hi.gov</span>
+      </header>
+      <main>
+        <h1>Sign up</h1>
+
+        <form>
+          <div class="email">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email address"
+            />
+          </div>
+
+          <div class="password">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Your password"
+            />
+          </div>
+
+          <div class="button signup" role="button"><span>Sign up</span></div>
+        </form>
+        <div class="info">
+          <p class="info">We'll send you an email to confirm your account.</p>
+        </div>
+      </main>
+      <div class="change-method">
+        <p class="change-method">Already have an account?</p>
+        <a class="change-method" href="../login/index.html">Log in</a>
+      </div>
+    </div>
+
+    <script src="./signup.ts" type="module"></script>
+  </body>
+</html>

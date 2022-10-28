@@ -1,0 +1,127 @@
+:root {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+div.container {
+  margin-bottom: 20px;
+}
+
+header {
+  max-width: 1024px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+span.logo {
+  font-size: 20px;
+}
+
+span.logo.part-one {
+  font-weight: 700;
+  color: var(--color-blue);
+}
+
+main {
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+input {
+  margin-top: 5px;
+  width: 100%;
+  max-width: 450px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-indent: 5px;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  font-size: 18px;
+}
+
+input:focus {
+  border-color: var(--color-blue);
+}
+
+div.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 450px;
+  height: 40px;
+  color: var(--color-white);
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+div.button.continue {
+  margin-top: 15px;
+  background-color: var(--color-black);
+}
+
+div.button:active {
+  opacity: 0.7;
+}
+
+div.horizontal-line {
+  max-width: 1024px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-black);
+}
+
+@media (min-width: 426px) {
+  main {
+    align-items: center;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 769px) {
+  header {
+    margin-left: 50px;
+  }
+  div.horizontal-line {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 1074px) {
+  header {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  div.horizontal-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
