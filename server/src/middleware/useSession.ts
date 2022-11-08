@@ -20,7 +20,7 @@ interface SessionOptions {
 }
 
 interface Session {
-  encryptedSessionID: string;
+  hashSessionID: string;
   absoluteTimeout: number;
   userID: string;
 }
@@ -40,12 +40,12 @@ const useSession: Middleware<SessionOptions> = function useSession(
       await createSession(ctx, opts, next);
       return;
     }
-    const encryptedSessionID = createHmac("sha256", opts.secret)
+    const hashSessionID = createHmac("sha256", opts.secret)
       .update(sessionID)
       .digest("hex");
     let sessionJSON: string | null;
     try {
-      sessionJSON = await redisClient.get(`session:${encryptedSessionID}`);
+      sessionJSON = await redisClient.get(`session:${hashSessionID}`);
     } catch (error) {
       console.error("redis failed get operation: ", error);
       ctx.res.statusCode = 501;
@@ -67,7 +67,7 @@ const useSession: Middleware<SessionOptions> = function useSession(
     await next(ctx);
     try {
       await redisClient.setex(
-        `session:${ctx.session.encryptedSessionID}`,
+        `session:${ctx.session.hashSessionID}`,
         Math.floor(opts.idleTimeout / 1000),
         JSON.stringify(ctx.session)
       );
@@ -84,7 +84,7 @@ export default useSession;
 
 async function generateSessionID(secret: string): Promise<{
   sessionID: string;
-  encryptedSessionID: string;
+  hashSessionID: string;
 }> {
   return new Promise((resolve, reject) => {
     randomBytes(16, (err, buf) => {
@@ -93,10 +93,10 @@ async function generateSessionID(secret: string): Promise<{
         return;
       }
       const sessionID = buf.toString("hex");
-      const encryptedSessionID = createHmac("sha256", secret)
+      const hashSessionID = createHmac("sha256", secret)
         .update(sessionID)
         .digest("hex");
-      resolve({ sessionID, encryptedSessionID });
+      resolve({ sessionID, hashSessionID });
       return;
     });
   });
@@ -108,12 +108,12 @@ async function createSession(
   next: Handler
 ) {
   try {
-    const { sessionID, encryptedSessionID } = await generateSessionID(
+    const { sessionID, hashSessionID } = await generateSessionID(
       opts.secret
     );
 
     ctx.session = {
-      encryptedSessionID,
+      hashSessionID,
       absoluteTimeout: Date.now() + opts.absoluteTimeout,
       userID: "",
     };
@@ -127,7 +127,7 @@ async function createSession(
   await next(ctx);
   try {
     await redisClient.setex(
-      `session:${ctx.session.encryptedSessionID}`,
+      `session:${ctx.session.hashSessionID}`,
       Math.floor(opts.idleTimeout / 1000),
       JSON.stringify(ctx.session)
     );
